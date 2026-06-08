@@ -12,7 +12,7 @@ const app = express();
 connectDB();
 
 app.use(cors({
-    origin:"https://simple-chat-app-frontend-rho.vercel.app/",
+    origin:"https://simple-chat-app-frontend-rho.vercel.app",
     methods:["GET","POST"]
 }));
 app.use(express.json());
