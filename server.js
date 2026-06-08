@@ -11,7 +11,10 @@ const socketHandler = require("./socket/socketHandler");
 const app = express();
 connectDB();
 
-app.use(cors());
+app.use(cors({
+    origin:"https://simple-chat-app-frontend-rho.vercel.app/",
+    methods:["GET","POST"]
+}));
 app.use(express.json());
 
 app.use("/api/auth" , require("./routes/authRoutes"));
