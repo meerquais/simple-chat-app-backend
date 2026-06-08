@@ -22,9 +22,14 @@ app.use("/api/messages", require("./routes/messageRoutes"));
 
 const server = http.createServer(app);
 
+const allowedOrigins = [
+    "http://localhost:3000",
+    "https://simple-chat-app-frontend-rho.vercel.app"
+  ];
+
 const io = new Server(server, {
     cors:{
-        origin:"simple-chat-app-frontend-rho.vercel.app",
+        origin: allowedOrigins,
         methods:["GET" , "POST"]
     }
 });
